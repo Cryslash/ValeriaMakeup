@@ -1,0 +1,21 @@
+<section>
+  <div class="cover">
+    <h1 class="text_1">Valéria Makeup</h1>
+    <div class="models"></div>
+    <div class="social_medias">
+      <div class="media_container">
+        <% for i in 0..2 %>
+          <div class="<%= @social_medias[i][0] %>"></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+	<div class="schedule">
+		<h1 class="schedule_text_1">Agende seu horário conosco.</h1>
+		<h2 class="schedule_text_2">Qual o horário do seu evento?</h1>
+	    <%= date_select("article", "written_on", order: [:day, :month, :year], class: "date_field") %>
+	</div>
+</section>

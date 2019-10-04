@@ -11,4 +11,17 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-# Rails.application.config.assets.precompile += %w( admin.js admin.css )
+  Rails.application.config.assets.precompile += %w(cover  
+                                                   models/modelo_01_01
+                                                   models/modelo_01_02
+                                                   models/modelo_01_03
+                                                   models/modelo_02_01
+                                                   models/modelo_02_02
+                                                   models/modelo_02_03
+                                                   models/modelo_03_01
+                                                   models/modelo_03_02
+                                                   models/modelo_03_03
+                                                   medias/facebook
+                                                   medias/instagram
+                                                   medias/whatsapp
+                                                   schedule)

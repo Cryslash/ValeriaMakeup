@@ -1,0 +1,107 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+section {	
+	width: 100%;
+	height: 100vh;
+}
+
+.cover{
+	background: url("cover") 100% 100%/cover no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.models{
+	position: absolute;
+	display: block;
+	background: url("models/modelo_01_01") 100% 100%/100% 100% no-repeat;
+	left: 45%;	
+	height: 100%;
+	width: 40%;
+}
+
+.text_1 {
+	position: absolute;
+	top: 35vh;
+	left: 10%;
+	font-size: 5em;
+	color: #fff;
+	transform: translate(-10%, 0);
+	text-shadow: 2px 2px 2px #000;
+}
+
+.media_container{
+	position: relative;
+	top: 60vh;
+	left: 12%;
+	width:350px;
+	background: rgba(0,0,0,.6);
+	border-radius: 20px;
+}
+
+.media_container .facebook{
+    position: relative;
+    display: inline-block;
+    background: url("medias/facebook") 100% 100%/100% 100% no-repeat;
+    height: 64px;
+    width: 64px;
+    margin: 5px 25px;
+}
+
+.media_container .instagram{
+    position: relative;
+    display: inline-block;
+    background: url("medias/instagram") 100% 100%/100% 100% no-repeat;
+    height: 64px;
+    width: 64px;
+    margin: 5px 25px;
+}
+
+.media_container .whatsapp{
+    position: relative;
+    display: inline-block;
+    background: url("medias/whatsapp") 100% 100%/100% 100% no-repeat;
+    height: 64px;
+    width: 64px;
+    margin: 5px 25px;
+}
+
+.schedule{
+	background: url("schedule") 100% 100%/cover no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.schedule_text_1 {
+	position: relative;
+	top: 10vh;
+	left: 1%;	
+	font-size: 5em;
+	color: #fff;	
+	text-shadow: 1px 1px 1px #000;
+}
+
+.schedule_text_2 {
+	position: relative;
+	top: 20vh;
+	left: 10%;	
+	font-size: 3em;
+	color: #fff;	
+	text-shadow: 1px 1px 1px #000;
+}
+
+.date_field{
+	position: relative;
+	top: 25vh;
+	left: 18%;
+	width: 350px;
+	height:30px;
+	
+}
