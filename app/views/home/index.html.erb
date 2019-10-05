@@ -1,11 +1,17 @@
 <section>
   <div class="cover">
     <h1 class="text_1">Valéria Makeup</h1>
-    <div class="models"></div>
-    <div class="social_medias">
+    <div class="models">
+    	<div class="slide1"></div>
+    	<div class="slide2"></div>
+    	<div class="slide3"></div>
+    </div>
+    <div class="box">
       <div class="media_container">
         <% for i in 0..2 %>
-          <div class="<%= @social_medias[i][0] %>"></div>
+          <%= link_to @social_medias[i][0], :action => @social_medias[i][1] do %>
+            <div class="<%= @social_medias[i][0] %>"></div>
+          <%end%>
         <% end %>
       </div>
     </div>
@@ -16,6 +22,7 @@
 	<div class="schedule">
 		<h1 class="schedule_text_1">Agende seu horário conosco.</h1>
 		<h2 class="schedule_text_2">Qual o horário do seu evento?</h1>
-	    <%= date_select("article", "written_on", order: [:day, :month, :year], class: "date_field") %>
+	    <%= date_field("schedule", "date", class: "date_field") %>
+	    
 	</div>
 </section>

@@ -10,6 +10,7 @@
 section {	
 	width: 100%;
 	height: 100vh;
+	overflow: hidden;
 }
 
 .cover{
@@ -20,16 +21,36 @@ section {
 
 .models{
 	position: absolute;
-	display: block;
-	background: url("models/modelo_01_01") 100% 100%/100% 100% no-repeat;
+	display: block;	
 	left: 45%;	
-	height: 100%;
+	height: 100vh;
 	width: 40%;
+}
+
+.slide1,.slide2,.slide3{
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+}
+
+.slide1{
+	background: url("models/modelo_01_01") 100% 100%/100% 100% no-repeat;
+	animation: fade1 16s infinite;	
+}
+
+.slide2{
+	background: url("models/modelo_01_02") 100% 100%/100% 100% no-repeat;
+	animation: fade2 16s infinite;	
+}
+
+.slide3{
+	background: url("models/modelo_01_03") 100% 100%/100% 100% no-repeat;
+	animation: fade3 16s infinite;	
 }
 
 .text_1 {
 	position: absolute;
-	top: 35vh;
+	top: 25vh;
 	left: 10%;
 	font-size: 5em;
 	color: #fff;
@@ -37,40 +58,51 @@ section {
 	text-shadow: 2px 2px 2px #000;
 }
 
-.media_container{
-	position: relative;
-	top: 60vh;
-	left: 12%;
-	width:350px;
-	background: rgba(0,0,0,.6);
-	border-radius: 20px;
+.box{
+	position: absolute;
+	display: block;
+	top:45vh;
+	left:6%;
+	background: rgba(255,255,255,.8);
+	width: 580px;
+	height: 45vh;
+	border-radius: 45px;
 }
 
-.media_container .facebook{
+.box .media_container{
+	position: relative;
+	top: 85%;
+	left: 50%;
+	transform: translate(-50%,0);
+	width: 90%;
+	border-top:solid 1px darkgrey;	
+}
+
+.box .media_container .facebook{
     position: relative;
     display: inline-block;
     background: url("medias/facebook") 100% 100%/100% 100% no-repeat;
-    height: 64px;
-    width: 64px;
-    margin: 5px 25px;
+    height: 48px;
+    width: 48px;
+    margin: 5px 60px;
 }
 
-.media_container .instagram{
+.box .media_container .instagram{
     position: relative;
     display: inline-block;
     background: url("medias/instagram") 100% 100%/100% 100% no-repeat;
-    height: 64px;
-    width: 64px;
-    margin: 5px 25px;
+    height: 48px;
+    width: 48px;
+    margin: 5px 60px;
 }
 
-.media_container .whatsapp{
+.box .media_container .whatsapp{
     position: relative;
     display: inline-block;
     background: url("medias/whatsapp") 100% 100%/100% 100% no-repeat;
-    height: 64px;
-    width: 64px;
-    margin: 5px 25px;
+    height: 48px;
+    width: 48px;
+    margin: 5px 60px;
 }
 
 .schedule{
@@ -99,9 +131,35 @@ section {
 
 .date_field{
 	position: relative;
-	top: 25vh;
-	left: 18%;
-	width: 350px;
+	top: 30vh;
+	left: 19%;
+	width: 300px;
 	height:30px;
+	text-align: center;
+	font-size: 1.5em;
 	
+}
+
+@keyframes fade1
+{
+    0% {opacity: 1;}
+    33% {opacity: 0;}
+    66% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fade2
+{
+    0% {opacity: 0;}
+    33% {opacity: 1;}
+    66% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+@keyframes fade3
+{
+    0% {opacity: 0;}
+    33% {opacity: 0;}
+    66% {opacity: 1;}
+    100% {opacity: 0;}
 }
