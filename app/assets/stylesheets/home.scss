@@ -13,6 +13,30 @@ section {
 	overflow: hidden;
 }
 
+.login_bar {
+	position: absolute;
+	top:0;
+	width:100%;
+	height: 45px;	
+	z-index: 1000;	
+}
+
+.login_bar li {
+	list-style: none;
+	display: inline-block;
+	float:right;
+	color: #FA58AC;
+	font-size: 1.3em;
+	padding: .6em 0 0 2em;
+}
+
+.login_bar img{
+	float: right;
+	height: 48px;
+	width: 48px;
+	padding: 0 1em;
+}
+
 .cover{
 	background: url("cover") 100% 100%/cover no-repeat;
     width: 100%;
@@ -105,6 +129,33 @@ section {
     margin: 5px 60px;
 }
 
+// Button/Arrow
+.cover .cover_bottom{
+   position: absolute;
+   display: block;
+   top: 80vh;
+   left:50%;
+   transform: translate(-50%, 0);
+   z-index: 999;
+}
+
+.cover .cover_bottom #arrow-down {
+    position: relative;
+    text-align: center;
+    animation: jump 5s infinite;
+    i {
+      content: '\f0a8';
+      font-family: 'FontAwesome';
+      font-size: 80px;
+      color: #FA58AC;
+      transition: .3s ease-in-out;
+    }
+    i:hover {
+      opacity: 0.7;
+      transition: .3s ease-in-out;
+    }
+}
+
 .schedule{
 	background: url("schedule") 100% 100%/cover no-repeat;
     width: 100%;
@@ -162,4 +213,9 @@ section {
     33% {opacity: 0;}
     66% {opacity: 1;}
     100% {opacity: 0;}
+}
+
+// Animation arrow
+@keyframes jump {
+  0% { top: 0; } 50% { top: 50px; } 100% { top: 0; }
 }

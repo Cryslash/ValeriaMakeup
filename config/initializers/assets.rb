@@ -11,7 +11,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-  Rails.application.config.assets.precompile += %w(cover  
+  Rails.application.config.assets.precompile += %w(cover
+                                                   user
                                                    models/modelo_01_01
                                                    models/modelo_01_02
                                                    models/modelo_01_03
