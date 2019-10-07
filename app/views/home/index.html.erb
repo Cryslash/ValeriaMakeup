@@ -1,15 +1,26 @@
+<!--Olá <%#= current_user.email %>-->
+
 <section>
-  <div class="cover">    
+  <div class="cover">
       <ul class="login_bar">
-        <%= image_tag "user"%>
-        <%= link_to "login", :action => "home" do %>
-          <li>entrar</li>
+        <% if current_user.image.present? %>
+          <%= image_tag(current_user.image, size: "48", class: "img") %>
         <%end%>
-        <%= link_to "novo", :action => "home" do %>
-          <li>novo usuário</li>
+        <%if current_user.name.present? %>
+          <li><%= current_user.name %></li>
+          <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
         <%end%>
-      </ul>    
-    <h1 class="text_1">Valéria Makeup</h1>    
+        <%if current_user.name.nil? && current_user.email.present?  %>
+          <li><%= current_user.email %></li>
+          <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>          
+        <% end %>
+        <%if current_user.email.nil?%>        
+          <%= link_to "novo", :action => "home" do %>
+            <li>novo usuário</li>
+          <%end%>
+        <%end%>
+      </ul>
+    <h1 class="text_1">Valéria Makeup</h1>
     <div class="models">
     	<div class="slide1"></div>
     	<div class="slide2"></div>
