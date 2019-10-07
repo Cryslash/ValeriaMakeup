@@ -1,23 +1,27 @@
-<!--Olá <%#= current_user.email %>-->
 
 <section>
   <div class="cover">
       <ul class="login_bar">
-        <% if current_user.image.present? %>
-          <%= image_tag(current_user.image, size: "48", class: "img") %>
-        <%end%>
-        <%if current_user.name.present? %>
-          <li><%= current_user.name %></li>
-          <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
-        <%end%>
-        <%if current_user.name.nil? && current_user.email.present?  %>
-          <li><%= current_user.email %></li>
-          <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>          
-        <% end %>
-        <%if current_user.email.nil?%>        
-          <%= link_to "novo", :action => "home" do %>
-            <li>novo usuário</li>
+        <% if current_user != nil %> <%# if exist user!!!%>
+          <% if current_user.image.present? %>
+            <%= image_tag(current_user.image, size: "48", class: "img") %>
           <%end%>
+          <%if current_user.name.present? %>
+            <li><%= current_user.name %></li>
+            <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
+          <%end%>
+          <%if current_user.name.nil? && current_user.email.present?  %>
+            <li><%= current_user.email %></li>
+            <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>          
+          <% end %> <%# if don't exist user!!! %>
+          <%if current_user.email.nil?%>        
+            <%= link_to "novo", :action => "home" do %>
+              <li>novo usuário</li>
+            <%end%>
+          <%end%>        
+        <%else%>
+           <li><%=link_to 'login', user_session_path, :method => :get %></li>
+           <li><%=link_to 'novo usuário', new_user_registration_path, :method => :get %></li>            
         <%end%>
       </ul>
     <h1 class="text_1">Valéria Makeup</h1>
@@ -36,11 +40,11 @@
       </div>
     </div>
     <div class="cover_bottom">      
-        <a href="#agenda">  <!-- Link to your content ID -->
+        <%= link_to "#agenda", :action => "#agenda" do %> <%# Link to your content ID %>
         <div id="arrow-down">
           <i class="fa fa-chevron-down"></i>
         </div>
-        </a>
+        <%end%>
     </div>
   </div>
 </section>
