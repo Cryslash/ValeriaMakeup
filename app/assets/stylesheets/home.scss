@@ -1,7 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
 *{
 	padding: 0;
 	margin: 0;
@@ -75,12 +75,18 @@ section {
 
 .text_1 {
 	position: absolute;
-	top: 25vh;
+	top: 22vh;
 	left: 10%;
-	font-size: 5em;
-	color: #fff;
+	font-family: 'Great Vibes', cursive;
+	font-size: 6.5em;
+	color: #B4045F;
 	transform: translate(-10%, 0);
-	text-shadow: 2px 2px 2px #000;
+	text-shadow: 1px 2px 1px #fff;
+}
+
+.text_1 span{
+	color:#FA58AC;   
+    text-shadow: 1px 2px 1px #fff;
 }
 
 .box{

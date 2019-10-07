@@ -1,0 +1,61 @@
+.bg{
+	position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #FA58AC;
+}
+
+#devise_container {
+	position:absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	background: #FA58AC;
+	text-align: center;
+	color: #fff;
+	font-size: 1.2em;	
+}
+
+h2{
+	font-size: 3.5em;
+	color: #B4045F;
+}
+
+.field #user_email {
+	width: 300px;
+	height: 30px;
+	border-radius: 45px;
+	outline: none;
+	font-size: 1em;
+	padding-left: .5em;
+	border: none;
+}
+
+.field #user_password {
+    width: 300px;
+	height: 30px;
+	border-radius: 45px;
+	outline: none;
+    font-size: 1em;
+    padding-left: .5em;
+    border: none;
+}
+
+.field #user_password_confirmation {
+    width: 300px;
+	height: 30px;
+	border-radius: 45px;
+	outline: none;
+    font-size: 1em;
+    padding-left: .5em;
+    border: none;
+}
+
+.actions input{
+	width: 130px;
+	height: 40px;
+	border-radius: 45px;
+	background: #B4045F;
+	color: #fff;
+	border:none;
+}
