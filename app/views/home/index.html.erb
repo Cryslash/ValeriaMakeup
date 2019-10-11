@@ -1,10 +1,9 @@
-
 <section>
   <div class="cover">
       <ul class="login_bar">
         <% if current_user != nil %> <%# if exist user!!!%>
           <% if current_user.image.present? %>
-            <%= image_tag(current_user.image, size: "48", class: "img") %>
+            <%= image_tag(current_user.image, size: "36", class: "img") %>
           <%end%>
           <%if current_user.name.present? %>
             <li><%= current_user.name %></li>

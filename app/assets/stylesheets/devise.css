@@ -59,3 +59,40 @@ h2{
 	color: #fff;
 	border:none;
 }
+
+/*flash*/
+.alert-error {
+	position:absolute;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+    z-index: 1001;
+ }
+
+.alert-alert {
+	position:absolute;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+    z-index: 1001;
+ }
+
+.alert-success {
+	position:absolute;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+    z-index: 1001;
+ }
+
+.alert-notice {
+	position:absolute;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+    z-index: 1001;
+ }
