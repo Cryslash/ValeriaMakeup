@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 *{
 	padding: 0;
 	margin: 0;
@@ -18,7 +19,7 @@ section {
 	top:0;
 	width:100%;
 	height: 45px;	
-	z-index: 1000;	
+	z-index: 1001;	
 }
 
 .login_bar li {
@@ -36,6 +37,42 @@ section {
 	width: 36px;
 	padding: 0 1em;
 	border-radius: 50%;
+}
+
+.toogle{
+	display: none;	
+}
+
+.toggle.on #one{
+    transform: rotate(45deg) translateX(6px) translateY(6px);
+}
+
+.toggle.on #two{
+    opacity: 0;
+}
+
+.toggle.on #three{
+    transform: rotate(-45deg) translateX(6px) translateY(-6px);
+}
+
+#resize{
+	z-index: 1001;
+	position: fixed;
+	display: table;
+	visibility: hidden;
+	width:100%;
+	height: 100vh;
+	background: #FA58AC;
+	opacity: 0;
+	font-size: 1.5em;
+	color: #fff;
+	text-align: center;
+	transition: all 1s ease-out;	
+}
+
+#resize.active {
+      visibility: visible;
+      opacity: 0.99;      
 }
 
 .cover{
@@ -100,16 +137,19 @@ section {
 	border-radius: 45px;
 }
 
-.box .media_container{
+.media_container{
 	position: relative;
 	top: 85%;
 	left: 50%;
 	transform: translate(-50%,0);
 	width: 90%;
+	text-align: center;
+	color: #fff;
+	font-family: poppins, sans-serif;
 	border-top:solid 1px darkgrey;	
 }
 
-.box .media_container .facebook{
+.media_container .facebook{
     position: relative;
     display: inline-block;
     background: url("medias/facebook") 100% 100%/100% 100% no-repeat;
@@ -118,7 +158,7 @@ section {
     margin: 5px 60px;
 }
 
-.box .media_container .instagram{
+.media_container .instagram{
     position: relative;
     display: inline-block;
     background: url("medias/instagram") 100% 100%/100% 100% no-repeat;
@@ -127,7 +167,7 @@ section {
     margin: 5px 60px;
 }
 
-.box .media_container .whatsapp{
+.media_container .whatsapp{
     position: relative;
     display: inline-block;
     background: url("medias/whatsapp") 100% 100%/100% 100% no-repeat;
@@ -136,8 +176,20 @@ section {
     margin: 5px 60px;
 }
 
+.media_container a{
+	text-decoration: none;	
+}
+
+.media_container i{
+	content: '\f0a8';
+	font-family: 'FontAwesome';
+    font-size: 48px;
+    color: #FFF;
+    margin: 0 40px;    
+}
+
 // Button/Arrow
-.cover .cover_bottom{
+.cover .cover_button{
    position: absolute;
    display: block;
    top: 80vh;
@@ -146,7 +198,7 @@ section {
    z-index: 999;
 }
 
-.cover .cover_bottom #arrow-down {
+.cover .cover_button #arrow-down {
     position: relative;
     text-align: center;
     animation: jump 5s infinite;
@@ -166,7 +218,7 @@ section {
 .schedule{
 	background: url("schedule") 100% 100%/cover no-repeat;
     width: 100%;
-    height: 100%;
+    height: 100%;    
 }
 
 .schedule_text_1 {
@@ -225,4 +277,74 @@ section {
 // Animation arrow
 @keyframes jump {
   0% { top: 0; } 50% { top: 50px; } 100% { top: 0; }
+}
+
+// Responsiveness
+@media only screen and (max-width:480px){
+	.models{
+       width:100%;
+       height:100vh;
+       left:0;       
+	}
+
+	.text_1{
+		z-index: 1000;
+		font-size: 4em;
+		top:65vh;
+		left:15%;		
+	}
+
+	.box{
+		display: none;
+	}
+    
+    .login_bar{
+    	position: fixed;
+    	top: 3vh;
+    	right: 5vw;
+    	width: 45px;
+    	background: rgba(250, 88, 172, 1);
+    	border-radius: 12px;
+    }
+
+    .login_bar li{
+    	display: none;
+    }
+
+    .toggle{
+    	position:absolute;
+    	width: 30px;
+    	height: 30px;
+    	left:50%;
+    	top:50%;
+    	transform: translate(-50%,-50%);
+    	cursor: pointer;
+    	transition: all .3s ease-out;
+    }
+
+    .toggle .span{
+        height: 3px;
+        margin: 5px auto;
+        background: #fff;
+        transition: all .3s ease-out;
+    }
+
+    .schedule{
+    	text-align: center;
+    }
+
+    .schedule_text_1 {
+    	top: 13vh;
+    	font-size: 3em;
+    }
+
+    .schedule_text_2{
+    	font-size: 2em;
+    	left:0;
+    }
+
+    .date_field{
+    	left:0;
+    }
+
 }
