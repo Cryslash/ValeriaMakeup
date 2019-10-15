@@ -8,10 +8,12 @@
           <%end%>
           <%if current_user.name.present? %>
             <li><%= current_user.name %></li>
+            <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
           <%end%>
           <%if current_user.name.nil? && current_user.email.present?  %>
             <li><%= current_user.email %></li>
+            <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
           <% end %> <%# if don't exist user!!! %>
           <%if current_user.email.nil?%>
@@ -43,10 +45,12 @@
           <%end%>
           <%if current_user.name.present? %>
             <li><%= current_user.name %></li>
+            <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
           <%end%>
           <%if current_user.name.nil? && current_user.email.present?  %>
             <li><%= current_user.email %></li>
+            <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
           <% end %> <%# if don't exist user!!! %>
           <%if current_user.email.nil?%>
