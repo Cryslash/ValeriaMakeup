@@ -322,13 +322,17 @@ section {
 
 	.text_1{
 		z-index: 1000;
-		font-size: 4em;
+		font-size: 3.2em;
 		top:65vh;
 		left:15%;		
 	}
 
 	.box{
 		display: none;
+	}
+
+	.cover .cover_button{
+        top: 70vh;
 	}
     
     .login_bar{
@@ -364,6 +368,10 @@ section {
         margin: 5px auto;
         background: #fff;
         transition: all .3s ease-out;
+    }
+   
+	.media_container i{	
+        margin: 0 25px;
     }
 
     .schedule{
