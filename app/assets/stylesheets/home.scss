@@ -142,7 +142,7 @@ section {
 	animation: fade3 16s infinite;	
 }
 
-.text_1 {
+.cover_text_1 {
 	position: absolute;
 	top: 22vh;
 	left: 10%;
@@ -153,7 +153,7 @@ section {
 	text-shadow: 1px 2px 1px #fff;
 }
 
-.text_1 span{
+.cover_text_1 span{
 	color:#FA58AC;
     text-shadow: 1px 2px 1px #fff;
 }
@@ -248,6 +248,76 @@ section {
     }
 }
 
+// Who am i
+.who_am_i {
+	/*text-align: center;*/
+	
+}
+
+.who_am_i h1 {
+	position: relative;
+	top: 3vh;	
+	text-align: center;
+    font-family: poppins, sans-serif;
+    font-size: 3em;    
+}
+
+.who_am_i img {
+	position: relative;
+	left: 10vw;
+	top: 10vh;
+	height:256px;
+	width:256px;
+	border-radius: 50%;
+}
+
+.who_am_i .who_am_i_text_container {
+	position: absolute;
+	top: 116vh;
+	left: 28%;
+	width: 58vw;
+	height: auto;	
+}
+
+.who_am_i .who_am_i_text_container p{
+    font-family: poppins, sans-serif;
+    font-size: 1.5em;    
+}
+
+.who_am_i .more_imgs {
+	position: absolute;
+	top: 153vh;
+	left: 20vw;
+	width: 60vw;
+	height: 250px;
+	border: solid 1px black;
+}
+
+.who_am_i button{
+    position: absolute;
+    top: 185vh;
+    left: 50%;
+    transform: translate(-50%,0);    
+	height: 60px;
+	width: 170px;
+	font-family: poppins, sans-serif;
+	font-size: 1em;
+	color: #FFF;
+	border-radius: 30px;
+	border-style: none;
+	background: #FA58AC;
+	transition: all .6s ease-out;
+	outline: none;
+}
+
+.who_am_i button:hover{
+    background: #FFF;
+    color: #FA58AC;
+    border: solid 1px #FA58AC;
+}
+
+
+// Schedule
 .schedule{
 	background: url("schedule") 100% 100%/cover no-repeat;
     width: 100%;

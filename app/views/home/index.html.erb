@@ -70,7 +70,7 @@
         </div>
       </ul>
 
-    <h1 class="text_1">Valéria <span>Makeup</span></h1>
+    <h1 class="cover_text_1">Valéria <span>Makeup</span></h1>
     <div class="models">
     	<div class="slide1"></div>
     	<div class="slide2"></div>
@@ -86,13 +86,29 @@
       </div>
     </div>
     <div class="cover_button">      
-        <%= link_to "#agenda", :action => "#agenda" do %> <%# Link to your content ID %>
+        <%= link_to "#Quem_sou_eu", :action => "#Quem_sou_eu" do %> <%# Link to your content ID %>
         <div id="arrow-down">
           <i class="fa fa-chevron-down"></i>
         </div>
         <%end%>
     </div>
   </div>
+</section>
+
+<section id="Quem_sou_eu">
+  <div class="who_am_i">
+    <h1>Quem sou eu?</h1>
+    <%= image_tag 'valeria' %>
+    <div class="who_am_i_text_container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam doloribus atque cum suscipit corrupti eligendi incidunt maiores, sit magnam non, modi id hic dignissimos nam! Fugit delectus nemo ab nostrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quam voluptate ratione qui voluptatem deleniti quae facilis culpa minus, accusantium, eaque illo totam facere. Accusantium dolorem expedita a. Minus, laudantium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, minima. Distinctio, adipisci dolorum fugiat in aperiam maxime, deleniti quidem, nesciunt, numquam quo voluptatibus suscipit. Obcaecati perspiciatis recusandae eum facere, mollitia.</p>
+    </div>
+    <div class="more_imgs">
+
+    </div>
+    <%= link_to "#agenda", :action => "#agenda" do %>     
+     <%= button_tag 'Agende Conosco', :class => "schedule_btn"%>
+    <% end %>
+  </div>    
 </section>
 
 <section>
