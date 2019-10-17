@@ -1,8 +1,9 @@
-<%# toggle screen %>
+<!------ toggle screen -->
 <div id="resize">
   <div class="resize_body">
     <ul>
-      <% if current_user != nil %> <%# if exist user!!!%>
+      <!-- display structure if exist user to resize area!!! -->
+      <% if current_user != nil %> 
           <% if current_user.image.present? %>
             <%= image_tag(current_user.image, size: "36", class: "img") %>
           <%end%>
@@ -15,7 +16,8 @@
             <li><%= current_user.email %></li>
             <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
-          <% end %> <%# if don't exist user!!! %>
+          <% end %>
+      <!-- display structure if don't exist user to resize area!!! -->
           <%if current_user.email.nil?%>
             <%= link_to "novo", :action => "home" do %>
               <li>novo usuário</li>
@@ -36,10 +38,13 @@
     <% end %>
   </div>
 </div>
+<!------ Cover section -->
 <section>
   <div class="cover">
+      <!-- login bar --> 
       <ul class="login_bar">
-        <% if current_user != nil %> <%# if exist user!!!%>
+        <!-- display structure if exist user to login bar!!! -->
+        <% if current_user != nil %> 
           <% if current_user.image.present? %>
             <%= image_tag(current_user.image, size: "36", class: "img") %>
           <%end%>
@@ -52,7 +57,8 @@
             <li><%= current_user.email %></li>
             <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
-          <% end %> <%# if don't exist user!!! %>
+          <% end %> 
+          <!-- display structure if don't exist user to login bar!!! -->
           <%if current_user.email.nil?%>
             <%= link_to "novo", :action => "home" do %>
               <li>novo usuário</li>
@@ -62,20 +68,22 @@
            <li><%=link_to 'login', user_session_path, :method => :get %></li>
            <li><%=link_to 'novo usuário', new_user_registration_path, :method => :get %></li>
         <%end%>
-       <%# toggle button %>
+       <!-- toggle button -->
         <div class="toggle">
           <div class="span" id="one"></div>
           <div class="span" id="two"></div>
           <div class="span" id="three"></div>
         </div>
       </ul>
-
+    <!-- starting cover display area -->
     <h1 class="cover_text_1">Valéria <span>Makeup</span></h1>
+    <!-- slide structure -->
     <div class="models">
     	<div class="slide1"></div>
     	<div class="slide2"></div>
     	<div class="slide3"></div>
     </div>
+    <!-- social media box -->
     <div class="box">
       <div class="media_container">
         <% for i in 0..2 %>
@@ -85,6 +93,7 @@
         <% end %>
       </div>
     </div>
+    <!-- jumping arrow down -->
     <div class="cover_button">      
         <%= link_to "#Quem_sou_eu", :action => "#Quem_sou_eu" do %> <%# Link to your content ID %>
         <div id="arrow-down">
@@ -94,33 +103,32 @@
     </div>
   </div>
 </section>
-
+<!------ who am i section -->
 <section id="Quem_sou_eu">
-  <div class="who_am_i">
-    <h1>Quem sou eu?</h1>
+  <div class="img">    
     <%= image_tag 'valeria' %>
-    <div class="who_am_i_text_container">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam doloribus atque cum suscipit corrupti eligendi incidunt maiores, sit magnam non, modi id hic dignissimos nam! Fugit delectus nemo ab nostrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quam voluptate ratione qui voluptatem deleniti quae facilis culpa minus, accusantium, eaque illo totam facere. Accusantium dolorem expedita a. Minus, laudantium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, minima. Distinctio, adipisci dolorum fugiat in aperiam maxime, deleniti quidem, nesciunt, numquam quo voluptatibus suscipit. Obcaecati perspiciatis recusandae eum facere, mollitia.</p>
-    </div>
-    <div class="more_imgs">
-
-    </div>
-    <%= link_to "#agenda", :action => "#agenda" do %>     
-     <%= button_tag 'Agende Conosco', :class => "schedule_btn"%>
-    <% end %>
-  </div>    
+  </div>
+  <div class="video">
+    <%= video_tag("teaser", controls: true, preload: 'auto|metadata|none') %>
+  </div>  
+  <div>
+    <h1>Quem sou eu?</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam doloribus atque cum suscipit corrupti eligendi incidunt maiores, sit magnam non, modi id hic dignissimos nam! Fugit delectus nemo ab nostrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quam voluptate ratione qui voluptatem deleniti quae facilis culpa minus, accusantium, eaque illo totam facere. Accusantium dolorem expedita a. Minus, laudantium!</p>
+  </div>  
+  <%= link_to "#agenda", :action => "#agenda" do %>     
+    <%= button_tag 'Agende Conosco', :class => "schedule_btn"%>
+  <% end %>      
 </section>
-
+<!------ schedule section -->
 <section>
 	<div class="schedule" id="agenda">
 		<h1 class="schedule_text_1">Agende seu horário conosco.</h1>
 		<h2 class="schedule_text_2">Qual o horário do seu evento?</h1>
-	    <%= date_field("schedule", "date", class: "date_field") %>
-	    
+	    <%= date_field("schedule", "date", class: "date_field") %>	    
 	</div>
 </section>
-
-
+<!------ java scripts -->
+<!-- anchor -->
 <script>
 $('a[href*="#"]')  
   .not('[href="#"]')
@@ -150,7 +158,7 @@ $('a[href*="#"]')
     }
   });
 </script>
-
+<!-- toggle menu button function -->
 <script>
       $(".toggle").click(function() {
       $(this).toggleClass('on');

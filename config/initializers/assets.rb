@@ -14,6 +14,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
   Rails.application.config.assets.precompile += %w(cover
                                                    user
                                                    valeria
+                                                   teaser
                                                    models/modelo_01_01
                                                    models/modelo_01_02
                                                    models/modelo_01_03

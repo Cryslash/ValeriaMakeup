@@ -6,6 +6,8 @@
 *{
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
+	font-family: poppins, sans-serif;
 }
 
 section {	
@@ -14,6 +16,7 @@ section {
 	overflow: hidden;
 }
 
+//login bar
 .login_bar {
 	position: absolute;
 	top:0;
@@ -39,6 +42,7 @@ section {
 	border-radius: 50%;
 }
 
+//toggle menu
 .toogle{
 	display: none;	
 }
@@ -55,6 +59,7 @@ section {
     transform: rotate(-45deg) translateX(6px) translateY(-6px);
 }
 
+//resize area
 #resize{
 	z-index: 1001;
 	position: fixed;
@@ -107,6 +112,7 @@ section {
 	border-radius: 50%;
 }
 
+//cover
 .cover{
 	background: url("cover") 100% 100%/cover no-repeat;
     width: 100%;
@@ -155,9 +161,11 @@ section {
 
 .cover_text_1 span{
 	color:#FA58AC;
+	font-family: 'Great Vibes', cursive;
     text-shadow: 1px 2px 1px #fff;
 }
 
+// social media
 .box{
 	position: absolute;
 	display: block;
@@ -249,53 +257,69 @@ section {
 }
 
 // Who am i
-.who_am_i {
-	/*text-align: center;*/
-	
+#Quem_sou_eu {
+	position: relative;
+	padding: 60px 180px;
 }
 
-.who_am_i h1 {
+.img {	
 	position: relative;
+	overflow: hidden;
+	float: left;
+	height: 320px;
+	width: 320px;
+	margin: 20px;
+	border-radius: 50%;	
+	shape-outside: circle();
+}
+
+.img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: 100% 100%;
+}
+
+.video {
+	/*position: absolute;
+	top: 140vh;
+	left: 60vw;*/
+	position: relative;	
+	overflow: hidden;
+	float: right;	
+	height: 350px;
+	width: 450px;
+	margin: 250px 0 0 30px;	
+	shape-outside: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.video video{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;	
+}
+
+#Quem_sou_eu h1 {
+	/*position: relative;
 	top: 3vh;	
 	text-align: center;
-    font-family: poppins, sans-serif;
-    font-size: 3em;    
+    font-family: poppins, sans-serif;*/
+    font-size: 3em;
+    margin-bottom: 10px;   
 }
 
-.who_am_i img {
-	position: relative;
-	left: 10vw;
-	top: 10vh;
-	height:256px;
-	width:256px;
-	border-radius: 50%;
-}
-
-.who_am_i .who_am_i_text_container {
-	position: absolute;
-	top: 116vh;
-	left: 28%;
-	width: 58vw;
-	height: auto;	
-}
-
-.who_am_i .who_am_i_text_container p{
-    font-family: poppins, sans-serif;
+#Quem_sou_eu p{
+    /*font-family: poppins, sans-serif; */
     font-size: 1.5em;    
 }
 
-.who_am_i .more_imgs {
-	position: absolute;
-	top: 153vh;
-	left: 20vw;
-	width: 60vw;
-	height: 250px;
-	border: solid 1px black;
-}
-
-.who_am_i button{
+#Quem_sou_eu button{
     position: absolute;
-    top: 185vh;
+    top: 75vh;
     left: 50%;
     transform: translate(-50%,0);    
 	height: 60px;
@@ -310,7 +334,7 @@ section {
 	outline: none;
 }
 
-.who_am_i button:hover{
+#Quem_sou_eu button:hover{
     background: #FFF;
     color: #FA58AC;
     border: solid 1px #FA58AC;
@@ -353,6 +377,7 @@ section {
 	
 }
 
+// Animation cover slide
 @keyframes fade1
 {
     0% {opacity: 1;}
@@ -384,28 +409,7 @@ section {
 
 // Responsiveness
 @media only screen and (max-width:480px){
-	.models{
-       width:100%;
-       height:100vh;
-       left:0;       
-	}
-
-	.text_1{
-		z-index: 1000;
-		font-size: 3.2em;
-		top:65vh;
-		left:15%;		
-	}
-
-	.box{
-		display: none;
-	}
-
-	.cover .cover_button{
-        top: 70vh;
-	}
-    
-    .login_bar{
+	.login_bar{
     	position: fixed;
     	top: 3vh;
     	right: 5vw;
@@ -439,9 +443,58 @@ section {
         background: #fff;
         transition: all .3s ease-out;
     }
-   
+
+	.models{
+       width:100%;
+       height:100vh;
+       left:0;       
+	}
+
+	.cover_text_1{
+		z-index: 1000;
+		font-size: 3.2em;
+		top:65vh;
+		/*left:15%;	*/
+		text-align: center;
+		transform: translate( 0, 0 );
+	}
+
+	.box{
+		display: none;
+	}
+
+	.cover .cover_button{
+        top: 70vh;
+	}
+        
 	.media_container i{	
         margin: 0 25px;
+    }
+    
+    #Quem_sou_eu {
+    	padding: 5px;
+    }
+
+    #Quem_sou_eu .video{
+    	display: none;
+    }
+
+    #Quem_sou_eu .img {
+    	left:0;
+    	width: 160px;
+    	height: 160px;
+    }
+
+    #Quem_sou_eu h1{
+    	font-size: 2em;
+    }
+
+    #Quem_sou_eu p{
+    	font-size: 1em;
+    }
+
+    #Quem_sou_eu button{
+    	top: 80vh;
     }
 
     .schedule{
@@ -461,5 +514,5 @@ section {
     .date_field{
     	left:0;
     }
-
+  
 }
