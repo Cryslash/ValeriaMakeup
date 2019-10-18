@@ -30,7 +30,8 @@ section {
 	display: inline-block;
 	float:right;
 	color: #FA58AC;
-	font-size: 1.2em;
+	//font-size: 1vw;
+	font-size:calc(8px + .5vw);
 	padding: .4em 0 0 2em;
 }
 
@@ -38,7 +39,7 @@ section {
 	float: right;
 	height: 36px;
 	width: 36px;
-	padding: 0 1em;
+	margin: 0 1em;
 	border-radius: 50%;
 }
 
@@ -83,7 +84,7 @@ section {
 .resize_body{
     position: absolute;
     top: 15vh;
-    left: 50%;
+    left: 50%;    
     font-family: poppins, sans-serif;
     transform: translate(-50%, 0);	
 }
@@ -153,7 +154,8 @@ section {
 	top: 22vh;
 	left: 10%;
 	font-family: 'Great Vibes', cursive;
-	font-size: 6.5em;
+	//font-size: 5.5vw;
+	font-size:calc(36px + 3vw);
 	color: #B4045F;
 	transform: translate(-10%, 0);
 	text-shadow: 1px 2px 1px #fff;
@@ -172,8 +174,10 @@ section {
 	top: 45vh;
 	left: 7%;
 	background: rgba(255,255,255,.8);
-	width: 580px;
-	height: 45vh;
+	width: 30vw;
+	height: 22vw;
+	min-width: 300px;
+	min-height: 200px;
 	border-radius: 45px;
 }
 
@@ -194,27 +198,33 @@ section {
     position: relative;
     display: inline-block;
     background: url("medias/facebook") 100% 100%/100% 100% no-repeat;
-    height: 48px;
-    width: 48px;
-    margin: 5px 60px;
+    height: 2.5vw;
+    width: 2.5vw;
+    min-width: 24px;
+    min-height: 24px;
+    margin: .3vw 3vw;
 }
 
 .media_container .instagram{
     position: relative;
     display: inline-block;
     background: url("medias/instagram") 100% 100%/100% 100% no-repeat;
-    height: 48px;
-    width: 48px;
-    margin: 5px 60px;
+    height: 2.5vw;
+    width: 2.5vw;
+    min-width: 24px;
+    min-height: 24px;
+    margin: .3vw 3vw;
 }
 
 .media_container .whatsapp{
     position: relative;
     display: inline-block;
     background: url("medias/whatsapp") 100% 100%/100% 100% no-repeat;
-    height: 48px;
-    width: 48px;
-    margin: 5px 60px;
+    height: 2.5vw;
+    width: 2.5vw;
+    min-width: 24px;
+    min-height: 24px;
+    margin: .3vw 3vw;
 }
 
 .media_container a{
@@ -234,7 +244,7 @@ section {
    position: absolute;
    display: block;
    top: 80vh;
-   left:50%;
+   left: 50%;
    transform: translate(-50%, 0);
    z-index: 999;
 }
@@ -259,21 +269,23 @@ section {
 // Who am i
 #Quem_sou_eu {
 	position: relative;
-	padding: 60px 180px;
+	padding: 3vw 8vw;
 }
 
-.img {	
+#img {	
 	position: relative;
 	overflow: hidden;
 	float: left;
-	height: 320px;
-	width: 320px;
+	height: 15vw;
+	width: 15vw;
+	min-height: 128px;
+	min-width: 128px;
 	margin: 20px;
 	border-radius: 50%;	
 	shape-outside: circle();
 }
 
-.img img {
+#img img {
     position: absolute;
     top: 0;
     left: 0;
@@ -282,20 +294,19 @@ section {
     object-fit: 100% 100%;
 }
 
-.video {
-	/*position: absolute;
-	top: 140vh;
-	left: 60vw;*/
+#video {	
 	position: relative;	
 	overflow: hidden;
 	float: right;	
-	height: 350px;
-	width: 450px;
-	margin: 250px 0 0 30px;	
+	height: 18vw;
+	width: 25vw;
+	min-height: 160px;
+	min-width: 220px;
+	margin: 20px;
 	shape-outside: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.video video{
+#video video{
     position: absolute;
     top: 0;
     width: 100%;
@@ -303,18 +314,15 @@ section {
     object-fit: cover;	
 }
 
-#Quem_sou_eu h1 {
-	/*position: relative;
-	top: 3vh;	
-	text-align: center;
-    font-family: poppins, sans-serif;*/
-    font-size: 3em;
+#Quem_sou_eu h1 {	
+    //font-size: 2.4vw;
+    font-size:calc(12px + 1.5vw);
     margin-bottom: 10px;   
 }
 
-#Quem_sou_eu p{
-    /*font-family: poppins, sans-serif; */
-    font-size: 1.5em;    
+#Quem_sou_eu p{    
+    //font-size: 1.2vw;
+    font-size:calc(12px + .5vw);
 }
 
 #Quem_sou_eu button{
@@ -472,14 +480,14 @@ section {
     }
     
     #Quem_sou_eu {
-    	padding: 5px;
+    	//padding: 5px;
     }
 
-    #Quem_sou_eu .video{
+    #Quem_sou_eu #video{
     	display: none;
     }
 
-    #Quem_sou_eu .img {
+    #Quem_sou_eu #img {
     	left:0;
     	width: 160px;
     	height: 160px;
@@ -491,6 +499,10 @@ section {
 
     #Quem_sou_eu p{
     	font-size: 1em;
+    }
+
+    #text_extended {
+    	display: none;
     }
 
     #Quem_sou_eu button{

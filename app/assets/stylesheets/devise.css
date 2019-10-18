@@ -1,8 +1,9 @@
 .bg{
-	position: absolute;
+	position: absolute;	
     height: 100vh;
     width: 100%;
     background: #FA58AC;
+    overflow: auto;
 }
 
 #devise_container {
@@ -43,14 +44,16 @@ h2{
 	background: #B4045F;
 	color: #fff;
 	border:none;
+	cursor: pointer;
 }
 
 #erase_acc {
-	width: 145px;
+	width: 160px;
     height: 40px;
     background: #B4045F;
     color: #fff;
     border:none;
+    cursor: pointer;
 }
 
 /*flash*/
@@ -88,4 +91,10 @@ h2{
     color: #468847;
     text-align: left;
     z-index: 1001;
+ }
+
+ @media only screen and (max-width:480px){
+ #devise_container {	
+    top: 0;	
+	transform: translate(-50%, 0);}
  }

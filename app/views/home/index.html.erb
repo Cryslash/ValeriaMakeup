@@ -105,16 +105,19 @@
 </section>
 <!------ who am i section -->
 <section id="Quem_sou_eu">
-  <div class="img">    
+  <div id="img">    
     <%= image_tag 'valeria' %>
-  </div>
-  <div class="video">
-    <%= video_tag("teaser", controls: true, preload: 'auto|metadata|none') %>
   </div>  
   <div>
     <h1>Quem sou eu?</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam doloribus atque cum suscipit corrupti eligendi incidunt maiores, sit magnam non, modi id hic dignissimos nam! Fugit delectus nemo ab nostrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quam voluptate ratione qui voluptatem deleniti quae facilis culpa minus, accusantium, eaque illo totam facere. Accusantium dolorem expedita a. Minus, laudantium!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam doloribus atque cum suscipit corrupti eligendi incidunt maiores, sit magnam non, modi id hic dignissimos nam! Fugit delectus nemo ab nostrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quam voluptate ratione qui voluptatem deleniti quae facilis culpa minus, accusantium, eaque illo totam facere.</p>
+  </div>
+  <div id="video">
+    <%= video_tag("teaser", controls: true, preload: 'auto|metadata|none') %>
   </div>  
+  <div id="text_extended">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque facere soluta dicta delectus, fugiat assumenda temporibus. Neque atque ad vitae sed tempora aperiam corporis, accusantium molestiae iusto dolores, ullam commodi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo culpa provident modi explicabo? Culpa, mollitia, recusandae. Repellat praesentium, adipisci deserunt, provident accusamus excepturi. Id quis similique cumque temporibus, architecto nisi.</p>
+  </div> 
   <%= link_to "#agenda", :action => "#agenda" do %>     
     <%= button_tag 'Agende Conosco', :class => "schedule_btn"%>
   <% end %>      
