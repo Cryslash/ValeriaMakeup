@@ -125,15 +125,23 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque facere soluta dicta delectus, fugiat assumenda temporibus. Neque atque ad vitae sed tempora aperiam corporis, accusantium molestiae iusto dolores, ullam commodi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo culpa provident modi explicabo? Culpa, mollitia, recusandae. Repellat praesentium, adipisci deserunt, provident accusamus excepturi. Id quis similique cumque temporibus, architecto nisi.</p>
   </div>
   <%= link_to "#agenda", :action => "#agenda" do %>
-    <%= button_tag 'Agende Conosco', :class => "schedule_btn"%>
+    <%= button_tag 'Agende Conosco'%>
   <% end %>
 </section>
 <!------ schedule section -->
 <section>
 	<div class="schedule" id="agenda">
-		<h1 class="schedule_text_1">Agende seu horário conosco.</h1>
-		<h2 class="schedule_text_2">Qual o horário do seu evento?</h1>
-	    <%= date_field("schedule", "date", class: "date_field") %>
+    <%= form_for @schedule do |f| %>
+    <%#= render 'shared/error_messages', :object => f.object %>
+      <h1 class="schedule_text_1">Agende seu horário conosco.</h1>
+      <h2 class="schedule_text_2">Qual o horário do seu evento?</h1>        
+      <div class="field" id="date_field">               
+        <%= f.datetime_select :date_time%>
+      </div>
+      <div class="actions">
+        <%= f.submit "Confirmar", :id => "schedule_btn" %>
+      </div>  
+    <% end %>		
 	</div>
 </section>
 <!------ java scripts -->

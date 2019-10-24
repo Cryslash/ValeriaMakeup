@@ -398,15 +398,20 @@ section {
 	text-shadow: 1px 1px 1px #000;
 }
 
-.date_field{
+#date_field{
 	position: relative;
 	top: 30vh;
 	left: 19%;
-	width: 300px;
+	width: 350px;
 	height:30px;
 	text-align: center;
-	font-size: 1.5em;
-	
+	font-size: 1.5em;	
+}
+
+.actions #schedule_btn {
+	position: relative;
+	top: 35vh;
+	left: 25%;
 }
 
 // Animation cover slide
