@@ -25,22 +25,32 @@ class SchedulesController < ApplicationController
   # POST /schedules.json
   def create
     if current_user != nil
+      @all = Schedule.all
+      @schedule = Schedule.new(schedule_params)
+      @schedule.user_id = current_user.id
 
-    @schedule = Schedule.new(schedule_params)
-    @schedule.user_id = current_user.id
-        
-    respond_to do |format|
-      if @schedule.save
-        format.html { redirect_to home_index_url, notice: 'Seu horário foi agendado.' }
-        format.json { render :show, status: :created, location: @schedule }
+      @all.each do |a|
+        @stamp = a.date_time.to_i
+        if @stamp.between?(@schedule.date_time.to_i - 5399, @schedule.date_time.to_i + 5399)
+          @test = true      
+        end
+      end  
+      if @test != true
+        respond_to do |format|
+          if @schedule.save
+            format.html { redirect_to home_index_url, notice: 'Seu horário foi agendado.' }
+            format.json { render :show, status: :created, location: @schedule }
+          else
+            format.html { render :new }
+            format.json { render json: @schedule.errors, status: :unprocessable_entity }
+          end
+        end
       else
-        format.html { render :new }
-        format.json { render json: @schedule.errors, status: :unprocessable_entity }
+        redirect_to home_index_url, notice: 'O horário escolhido não está disponível.'  
       end
+    else
+      redirect_to user_session_path, notice: 'Você precisa está logado para agendar um horário.'
     end
-  else
-    redirect_to user_session_path, notice: 'Você precisa está logado para agendar um horário.'
-  end
   end
 
   # PATCH/PUT /schedules/1

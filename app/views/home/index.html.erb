@@ -49,7 +49,7 @@
             <%= image_tag(current_user.image, size: "36", class: "img") %>
           <%end%>
           <%if current_user.name.present? %>
-            <li><%= current_user.name %></li>
+            <li id="li_user_name"><%= current_user.name %></li>
             <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
           <%end%>
@@ -135,7 +135,7 @@
     <%#= render 'shared/error_messages', :object => f.object %>
       <h1 class="schedule_text_1">Agende seu horário conosco.</h1>
       <h2 class="schedule_text_2">Qual o horário do seu evento?</h1>        
-      <div class="field" id="date_field">               
+      <div class="field" id="date_field">
         <%= f.datetime_select :date_time%>
       </div>
       <div class="actions">

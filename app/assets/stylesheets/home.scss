@@ -36,6 +36,10 @@ section {
 	padding: .6em 1em 0 1em;
 }
 
+.login_bar #li_user_name{
+	color: #FFF;
+}
+
 .login_bar img{
 	float: right;
 	height: 36px;
@@ -411,7 +415,7 @@ section {
 .actions #schedule_btn {
 	position: relative;
 	top: 35vh;
-	left: 25%;
+	left: 25vw;
 }
 
 // Animation cover slide
@@ -552,8 +556,14 @@ section {
     	left:0;
     }
 
-    .date_field{
-    	left:0;
+    #date_field{
+    	top: 28vh;
+    	left: 50vw;
+    	transform: translate(-50vw,0);
     }
   
+    .actions #schedule_btn {	
+	    top: 30vh;
+	    transform: translate(-25vw,0);
+    }
 }
