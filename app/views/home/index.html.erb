@@ -49,12 +49,12 @@
             <%= image_tag(current_user.image, size: "36", class: "img") %>
           <%end%>
           <%if current_user.name.present? %>
-            <li id="li_user_name"><%= current_user.name %></li>
+            <li class="li_white_color"><%= current_user.name %></li>
             <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
           <%end%>
           <%if current_user.name.nil? && current_user.email.present?  %>
-            <li><%= current_user.email %></li>
+            <li class="li_white_color"><%= current_user.email %></li>
             <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
           <% end %> 
