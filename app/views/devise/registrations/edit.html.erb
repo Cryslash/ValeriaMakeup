@@ -9,27 +9,28 @@
   <div class="field">
     <%= f.label "Email" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  </div><br>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Atualmente aguardando confirmação para: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="field">
-    <%= f.label "Senha" %> <br><i>(deixe em branco caso não deseje alterar)</i><br />
+    <%= f.label "Senha" %> <br>
+    <%= f.password_field :password, autocomplete: "new-password" %><br>
+    <i>(deixe em branco caso não deseje alterar)</i><br/>
     <% if @minimum_password_length %>      
-      <em>(mínimo de <%= @minimum_password_length %> caracteres)</em> <br />
+      <em>(mínimo de <%= @minimum_password_length %> caracteres)</em> <br/>
     <% end %>
-    <%= f.password_field :password, autocomplete: "new-password" %>    
   </div>
 
   <div class="field">
     <%= f.label "Confirmar Senha" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  </div><br>
 
   <div class="field">
-    <%= f.label "Senha Atual" %> <br><i>(precisamos da sua senha atual para confirmar suas mudanças)</i><br />
+    <%= f.label "Senha Atual" %> <br><!-- <i>(precisamos da sua senha atual para confirmar suas mudanças)</i><br/> -->
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div><br>
 

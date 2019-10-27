@@ -59,6 +59,9 @@ h2{
 /*flash*/
 .alert-error {
 	position:absolute;
+    top:45px;
+	left:50%;
+	transform: translate(-50%,0);
     background-color: #f2dede;
     border-color: #eed3d7;
     color: #b94a48;
@@ -68,6 +71,9 @@ h2{
 
 .alert-alert {
 	position:absolute;
+    top:45px;
+	left:50%;
+	transform: translate(-50%,0);
     background-color: #f2dede;
     border-color: #eed3d7;
     color: #b94a48;
@@ -77,6 +83,9 @@ h2{
 
 .alert-success {
 	position:absolute;
+    top:45px;
+	left:50%;
+	transform: translate(-50%,0);
     background-color: #dff0d8;
     border-color: #d6e9c6;
     color: #468847;
@@ -86,6 +95,9 @@ h2{
 
 .alert-notice {
 	position:absolute;
+    top:45px;
+	left:50%;
+	transform: translate(-50%,0);
     background-color: #dff0d8;
     border-color: #d6e9c6;
     color: #468847;

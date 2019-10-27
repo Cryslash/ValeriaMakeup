@@ -2,7 +2,7 @@
 <div id="resize">
   <div class="resize_body">
     <ul>
-      <!-- display structure if exist user to resize area!!! -->
+<!-- display structure if exist user to resize area!!! -->
       <% if current_user != nil %> 
           <% if current_user.image.present? %>
             <%= image_tag(current_user.image, size: "36", class: "img") %>
@@ -17,7 +17,7 @@
             <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
           <% end %>
-      <!-- display structure if don't exist user to resize area!!! -->
+<!-- display structure if don't exist user to resize area!!! -->
           <%if current_user.email.nil?%>
             <%= link_to "novo", :action => "home" do %>
               <li>novo usuário</li>
@@ -41,24 +41,23 @@
 <!------ Cover section -->
 <section id="Home">
   <div class="cover">
-      <!-- login bar --> 
+<!-- login bar --> 
       <ul class="login_bar">
-        <!-- display structure if exist user to login bar!!! -->
+<!-- display structure if exist user to login bar!!! -->
         <% if current_user != nil %> 
           <% if current_user.image.present? %>
             <%= image_tag(current_user.image, size: "36", class: "img") %>
           <%end%>
           <%if current_user.name.present? %>
-            <li class="li_white_color"><%= current_user.name %></li>
-            <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
-            <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
-          <%end%>
+            <li class="li_white_color dropdown_btn"><%= current_user.name %></li>
+          <%end%>  
           <%if current_user.name.nil? && current_user.email.present?  %>
-            <li class="li_white_color"><%= current_user.email %></li>
+            <li class="li_white_color dropdown_btn"><%= current_user.email %></li>
+          <% end %>
+            <li><p class="fas fa-angle-down dropdown_btn"></p></li> 
             <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
-          <% end %> 
-          <!-- display structure if don't exist user to login bar!!! -->
+<!-- display structure if don't exist user to login bar!!! -->
           <%if current_user.email.nil?%>
             <%= link_to "novo", :action => "home" do %>
               <li>novo usuário</li>
@@ -68,28 +67,32 @@
           <li><%=link_to 'login', user_session_path, :method => :get %></li>
           <li><%=link_to 'novo usuário', new_user_registration_path, :method => :get %></li>
         <%end%>
-       <!-- toggle button -->
+<!-- toggle button -->
         <div class="toggle">
           <div class="span" id="one"></div>
           <div class="span" id="two"></div>
           <div class="span" id="three"></div>
         </div>
       </ul>
-      <!-- scroll to begin button-->
+<!-- floating menu -->
+      <div class="float_menu">
+        
+      </div> 
+<!-- scroll to begin button-->
       <%= link_to "#Home", :action => "#Início" do %>
         <div id="begin_button">
           <p class="fas fa-angle-up"></p>
         </div>
       <%end%>
-    <!-- starting cover display area -->
+<!-- starting cover display area -->
     <h1 class="cover_text_1">Valéria <span>Makeup</span></h1>
-    <!-- slide structure -->
+<!-- slide structure -->
     <div class="models">
     	<div class="slide1"></div>
     	<div class="slide2"></div>
     	<div class="slide3"></div>
     </div>
-    <!-- social media box -->
+<!-- social media box -->
     <div class="box">
       <div class="media_container">
         <% for i in 0..2 %>
@@ -99,7 +102,7 @@
         <% end %>
       </div>
     </div>
-    <!-- jumping arrow down -->
+<!-- jumping arrow down -->
     <div class="cover_button">      
         <%= link_to "#Quem_sou_eu", :action => "#Quem_sou_eu" do %> <%# Link to your content ID %>
         <div id="arrow-down">
@@ -181,6 +184,12 @@ $('a[href*="#"]')
       $(this).toggleClass('on');
       $("#resize").toggleClass("active");
       });   
+</script>
+<!-- dropdown menu -->
+<script>
+  $(".dropdown_btn").click(function() { 
+  $(".float_menu").toggleClass("on"); 
+  });
 </script>
 <!-- begin button -->
 <script>

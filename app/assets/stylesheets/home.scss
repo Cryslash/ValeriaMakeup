@@ -26,27 +26,55 @@ section {
 	//background: rgba(255,255,255,.8);
 	background: rgba(250,88,172,.8);
 	z-index: 1001;
+	text-align: center;
 }
 
 .login_bar li {
 	list-style: none;
 	display: inline-block;
-	float:right;
+ //	float: right;    
 	color: #FA58AC;
 	font-size: 16px;	
-	padding: .6em 1em 0 1em;
+ 	padding: .6em 1em 0 1em;
+    vertical-align: 50%;
 }
 
 .login_bar .li_white_color{
 	color: #FFF;
+	cursor: pointer;
+}
+
+.login_bar li p {    
+	font-family: 'FontAwesome';
+	font-size: 18px;
+	color: #FFF;
+	cursor: pointer;
+	margin-left: -25px;	
 }
 
 .login_bar img{
-	float: right;
+ //	float: right;
+    position: relative;
+    left: 0;    
 	height: 36px;
 	width: 36px;
-	margin: .25em 1em 0 0;
+	margin: .25em 0 0 1em;
 	border-radius: 50%;	
+}
+//dropdown menu
+.float_menu{
+	position: fixed;
+	top: 45px;	
+	width: 100%;
+	height: 0;
+	background: rgba(255,255,255,.9);	
+	z-index: 1000;
+	transition: all .3s ease-out;
+}
+
+.float_menu.on{
+	height: 50%;
+    border-bottom: solid 1px darkgrey;
 }
 
 //toggle menu
