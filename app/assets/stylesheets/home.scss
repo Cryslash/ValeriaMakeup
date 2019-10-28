@@ -63,7 +63,7 @@ section {
 }
 //dropdown menu
 .float_menu{
-	position: fixed;
+	position: fixed;	
 	top: 45px;	
 	width: 100%;
 	height: 0;
@@ -73,8 +73,25 @@ section {
 }
 
 .float_menu.on{
-	height: 50%;
+	height: 50%;    
     border-bottom: solid 1px darkgrey;
+}
+
+.my_scheduled_times{
+	display: none;
+}
+
+.my_scheduled_times.on{
+	display: block;
+}
+
+.my_scheduled_times h1{
+	margin: 3em 0 0 6em;
+	font-size: 1.4em;
+}
+
+.my_scheduled_times ul li {
+	margin: 0 0 0 15em;
 }
 
 //toggle menu

@@ -76,7 +76,16 @@
       </ul>
 <!-- floating menu -->
       <div class="float_menu">
-        
+        <div class="my_scheduled_times">
+          <h1>Meus horários reservados</h1><br>
+          <ul>
+          <% if @my_schedules != nil %>
+            <% Array(@my_schedules).each do |ms| %>            
+              <li><%= (l ms.date_time, :format => :long) %></li>              
+            <% end %>  
+          <% end %>
+          </ul>
+        </div>
       </div> 
 <!-- scroll to begin button-->
       <%= link_to "#Home", :action => "#Início" do %>
@@ -188,7 +197,8 @@ $('a[href*="#"]')
 <!-- dropdown menu -->
 <script>
   $(".dropdown_btn").click(function() { 
-  $(".float_menu").toggleClass("on"); 
+  $(".float_menu").toggleClass("on");
+  $(".my_scheduled_times").toggleClass("on");
   });
 </script>
 <!-- begin button -->
