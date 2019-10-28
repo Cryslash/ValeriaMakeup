@@ -7,8 +7,8 @@ class HomeController < ApplicationController
     
     @schedule = Schedule.new
     
-    if current_user != nil
-      @my_schedules = Schedule.find_by :user_id => current_user.id
+    if current_user != nil     
+      @my_schedules = Schedule.where("user_id = ? and date_time > ?", current_user.id, DateTime.current)
     end
   end  
 end

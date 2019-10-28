@@ -1,0 +1,10 @@
+<h1>Meus horários reservados</h1><br>
+<ul>
+  <% if @my_schedules.present? %>
+    <% @my_schedules.each do |ms| %>
+      <li><%= (l ms.date_time, :format => :long) %></li>
+    <% end %>
+  <% else %>
+    <li>Não há horários reservados.</li>
+  <% end %>
+</ul>

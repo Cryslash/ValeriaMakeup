@@ -41,20 +41,20 @@
 <!------ Cover section -->
 <section id="Home">
   <div class="cover">
-<!-- login bar --> 
+<!-- login bar -->
       <ul class="login_bar">
 <!-- display structure if exist user to login bar!!! -->
-        <% if current_user != nil %> 
+        <% if current_user.present? %>
           <% if current_user.image.present? %>
             <%= image_tag(current_user.image, size: "36", class: "img") %>
           <%end%>
           <%if current_user.name.present? %>
             <li class="li_white_color dropdown_btn"><%= current_user.name %></li>
-          <%end%>  
+          <%end%>
           <%if current_user.name.nil? && current_user.email.present?  %>
             <li class="li_white_color dropdown_btn"><%= current_user.email %></li>
           <% end %>
-            <li><p class="fas fa-angle-down dropdown_btn"></p></li> 
+            <li><p class="fas fa-angle-down dropdown_btn"></p></li>
             <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
 <!-- display structure if don't exist user to login bar!!! -->
@@ -77,16 +77,9 @@
 <!-- floating menu -->
       <div class="float_menu">
         <div class="my_scheduled_times">
-          <h1>Meus horários reservados</h1><br>
-          <ul>
-          <% if @my_schedules != nil %>
-            <% Array(@my_schedules).each do |ms| %>            
-              <li><%= (l ms.date_time, :format => :long) %></li>              
-            <% end %>  
-          <% end %>
-          </ul>
+          <%= render "my_schedules" %>
         </div>
-      </div> 
+      </div>
 <!-- scroll to begin button-->
       <%= link_to "#Home", :action => "#Início" do %>
         <div id="begin_button">
@@ -112,7 +105,7 @@
       </div>
     </div>
 <!-- jumping arrow down -->
-    <div class="cover_button">      
+    <div class="cover_button">
         <%= link_to "#Quem_sou_eu", :action => "#Quem_sou_eu" do %> <%# Link to your content ID %>
         <div id="arrow-down">
           <i class="fa fa-chevron-down"></i>

@@ -101,8 +101,12 @@ h2{
     background-color: #dff0d8;
     border-color: #d6e9c6;
     color: #468847;
-    text-align: left;
+    //text-align: left;
     z-index: 1002;
+    width: 33%;
+    height:50px;
+    text-align: center;
+    padding: .7em 0;
  }
 
  @media only screen and (max-width:480px){

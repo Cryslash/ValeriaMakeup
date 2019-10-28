@@ -116,7 +116,7 @@ section {
 	position: fixed;
 	display: none;
 	top: 90vh;
-	right: 5vw;
+	right: 2vw;
 	width: 45px;
 	height: 45px;
 	text-align: center;
@@ -128,9 +128,14 @@ section {
 }
 
 #begin_button p {
-	margin: 7px 0;
+	margin: 8px 0;
 	font-family: 'FontAwesome';
 	font-size: 24px;
+	transition: all .3s ease-out;
+}
+
+#begin_button p:hover{
+	margin: 2px 0;
 }
 
 //resize area
@@ -461,6 +466,11 @@ section {
 	position: relative;
 	top: 35vh;
 	left: 25vw;
+}
+
+.alert .close{
+	float: right;
+	margin-right: 20px;
 }
 
 // Animation cover slide
