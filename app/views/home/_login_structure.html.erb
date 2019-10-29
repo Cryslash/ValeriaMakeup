@@ -1,0 +1,26 @@
+<!-- display structure if exist user to login bar!!! -->
+<% if current_user.present? %>
+  <% if current_user.image.present? %>
+    <%= image_tag(current_user.image, size: "36", class: "img") %>
+  <%end%>
+  <%if current_user.name.present? %>
+    <li class="li_white_color dropdown_btn fade_no_mobile" onclick="$('.toggle').click()"><%= current_user.name %></li>
+    <li class="li_white_color dropdown_btn fade_mobile"> <%= current_user.name %></li>
+  <%end%>
+  <%if current_user.name.nil? && current_user.email.present?  %>
+    <li class="li_white_color dropdown_btn fade_no_mobile" onclick="$('.toggle').click()"><%= current_user.email %></li>
+    <li class="li_white_color dropdown_btn fade_mobile"> <%= current_user.email %></li>
+  <% end %>
+    <li class="fade_mobile"><p class="fas fa-angle-down dropdown_btn"></p></li>
+    <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
+    <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
+<!-- display structure if don't exist user to login bar!!! -->
+  <%if current_user.email.nil?%>
+    <%= link_to "novo", :action => "home" do %>
+      <li>novo usuário</li>
+    <%end%>
+  <%end%>
+<%else%>
+  <li><%=link_to 'login', user_session_path, :method => :get %></li>
+  <li><%=link_to 'novo usuário', new_user_registration_path, :method => :get %></li>
+<%end%>

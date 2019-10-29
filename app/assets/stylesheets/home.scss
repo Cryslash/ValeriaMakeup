@@ -39,6 +39,10 @@ section {
     vertical-align: 50%;
 }
 
+.login_bar .fade_no_mobile{
+    	display: none;
+    }
+
 .login_bar .li_white_color{
 	color: #FFF;
 	cursor: pointer;
@@ -78,11 +82,25 @@ section {
 }
 
 .my_scheduled_times{
-	display: none;
+	//display: none;
+	visibility: hidden;
+	opacity: 0;
+	height: 100%;
+	width: 100%;
+	transition: all .1s ease-out;
 }
 
 .my_scheduled_times.on{
-	display: block;
+	//display: block;
+	visibility: visible;
+	position: absolute;
+	opacity: 1;	
+}
+
+.my_scheduled_times p{
+	font-family: 'FontAwesome';
+	font-size: 24px;
+	cursor: pointer;
 }
 
 .my_scheduled_times h1{
@@ -94,9 +112,17 @@ section {
 	margin: 0 0 0 15em;
 }
 
+.close_btn{
+	position: fixed;	
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	text-align: center;	
+}
+
 //toggle menu
 .toogle{
-	display: none;	
+	display: none;
 }
 
 .toggle.on #one{
@@ -505,6 +531,12 @@ section {
 
 // Responsiveness
 @media only screen and (max-width:480px){
+	//resize area
+    .resize_body ul .fade_mobile{
+    	display: none;
+    }
+
+    //login bar
 	.login_bar{
     	position: fixed;
     	top: 3vh;
@@ -522,6 +554,16 @@ section {
     	display: none;
     }
 
+    //drop down menu
+    .my_scheduled_times h1{
+	  margin: 1em 0 0 1.5em;	  
+    }
+
+    .my_scheduled_times ul li {
+	  margin: 0 0 0 3em;
+    }
+    
+    //toggle button
     .toggle{
     	position:absolute;
     	width: 30px;
@@ -540,6 +582,7 @@ section {
         transition: all .3s ease-out;
     }
 
+    //cover area
 	.models{
        width:100%;
        height:100vh;
@@ -547,7 +590,7 @@ section {
 	}
 
 	.cover_text_1{
-		z-index: 1000;
+		z-index: 999;
 		font-size: 3.2em;
 		top:65vh;
 		/*left:15%;	*/
@@ -566,11 +609,9 @@ section {
 	.media_container i{	
         margin: 0 25px;
     }
-    
-    #Quem_sou_eu {
-    	//padding: 5px;
-    }
 
+    // who i am area
+   
     #Quem_sou_eu #video{
     	display: none;
     }
@@ -596,7 +637,8 @@ section {
     #Quem_sou_eu button{
     	top: 80vh;
     }
-
+    
+    //schedule area
     .schedule{
     	text-align: center;
     }
@@ -612,13 +654,14 @@ section {
     }
 
     #date_field{
-    	top: 28vh;
+    	top: 20vh;
     	left: 50vw;
-    	transform: translate(-50vw,0);
+    	transform: translate(-50vw,0);    	
     }
   
     .actions #schedule_btn {	
-	    top: 30vh;
+	    top: 25vh;	    
 	    transform: translate(-25vw,0);
+	    font-size: 1em;
     }
 }

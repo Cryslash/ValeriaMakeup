@@ -2,31 +2,8 @@
 <div id="resize">
   <div class="resize_body">
     <ul>
-<!-- display structure if exist user to resize area!!! -->
-      <% if current_user != nil %> 
-          <% if current_user.image.present? %>
-            <%= image_tag(current_user.image, size: "36", class: "img") %>
-          <%end%>
-          <%if current_user.name.present? %>
-            <li><%= current_user.name %></li>
-            <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
-            <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
-          <%end%>
-          <%if current_user.name.nil? && current_user.email.present?  %>
-            <li><%= current_user.email %></li>
-            <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
-            <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
-          <% end %>
-<!-- display structure if don't exist user to resize area!!! -->
-          <%if current_user.email.nil?%>
-            <%= link_to "novo", :action => "home" do %>
-              <li>novo usuário</li>
-            <%end%>
-          <%end%>
-        <%else%>
-           <li><%=link_to 'login', user_session_path, :method => :get %></li>
-           <li><%=link_to 'novo usuário', new_user_registration_path, :method => :get %></li>
-        <%end%>
+<!-- display structure to resize area!!! -->
+      <%= render "login_structure" %>
     </ul>
   </div>
   <div class="media_container" style="position:absolute">
@@ -42,50 +19,29 @@
 <section id="Home">
   <div class="cover">
 <!-- login bar -->
-      <ul class="login_bar">
-<!-- display structure if exist user to login bar!!! -->
-        <% if current_user.present? %>
-          <% if current_user.image.present? %>
-            <%= image_tag(current_user.image, size: "36", class: "img") %>
-          <%end%>
-          <%if current_user.name.present? %>
-            <li class="li_white_color dropdown_btn"><%= current_user.name %></li>
-          <%end%>
-          <%if current_user.name.nil? && current_user.email.present?  %>
-            <li class="li_white_color dropdown_btn"><%= current_user.email %></li>
-          <% end %>
-            <li><p class="fas fa-angle-down dropdown_btn"></p></li>
-            <li><%= link_to "Editar", edit_user_registration_path, :method => :get %></li>
-            <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
-<!-- display structure if don't exist user to login bar!!! -->
-          <%if current_user.email.nil?%>
-            <%= link_to "novo", :action => "home" do %>
-              <li>novo usuário</li>
-            <%end%>
-          <%end%>
-        <%else%>
-          <li><%=link_to 'login', user_session_path, :method => :get %></li>
-          <li><%=link_to 'novo usuário', new_user_registration_path, :method => :get %></li>
-        <%end%>
+    <ul class="login_bar">
+<!-- display structure to login bar!!! -->
+      <%= render "login_structure" %>
 <!-- toggle button -->
-        <div class="toggle">
-          <div class="span" id="one"></div>
-          <div class="span" id="two"></div>
-          <div class="span" id="three"></div>
-        </div>
-      </ul>
-<!-- floating menu -->
-      <div class="float_menu">
-        <div class="my_scheduled_times">
-          <%= render "my_schedules" %>
-        </div>
+      <div class="toggle">
+        <div class="span" id="one"></div>
+        <div class="span" id="two"></div>
+        <div class="span" id="three"></div>
       </div>
+    </ul>
+<!-- floating menu -->
+    <div class="float_menu">
+      <div class="my_scheduled_times">
+        <%= render "my_schedules" %>
+        <div class="close_btn"><p class="fas fa-angle-up dropdown_btn"></p></div>
+      </div>      
+    </div>
 <!-- scroll to begin button-->
-      <%= link_to "#Home", :action => "#Início" do %>
-        <div id="begin_button">
-          <p class="fas fa-angle-up"></p>
-        </div>
-      <%end%>
+    <%= link_to "#Home", :action => "#Início" do %>
+      <div id="begin_button">
+        <p class="fas fa-angle-up"></p>
+      </div>
+    <%end%>
 <!-- starting cover display area -->
     <h1 class="cover_text_1">Valéria <span>Makeup</span></h1>
 <!-- slide structure -->
