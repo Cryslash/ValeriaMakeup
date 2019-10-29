@@ -99,17 +99,19 @@ section {
 
 .my_scheduled_times p{
 	font-family: 'FontAwesome';
-	font-size: 24px;
+	font-size: 24px;	
 	cursor: pointer;
 }
 
 .my_scheduled_times h1{
 	margin: 3em 0 0 6em;
-	font-size: 1.4em;
+	//font-size: 1.4em;
+	font-size:calc(3px + 1vw);
 }
 
 .my_scheduled_times ul li {
 	margin: 0 0 0 15em;
+	font-size:calc(1px + 1vw);
 }
 
 .close_btn{
